@@ -26,15 +26,6 @@ h2 {
     font-family: Helvetica;
 
 }
-
-h3 {
-    color: #007fff;
-    text-align: center;
-    cursor: help;
-    font-family: Helvetica;
-
-}
-
 button {
     background-color: #007fff;
     color: white;
@@ -100,20 +91,9 @@ label {
     margin: 0 auto;
 }
 
-.container1 {
-    padding: 20px;
-    text-align: center;
-    width: auto;
-    margin: 0 auto;
-}
-
 span.psw {
     float: right;
     padding-top: 16px;
-}
-p2 {
-    color: white;
-    
 }
 
 @media screen and (max-width: 300px) {
@@ -170,13 +150,11 @@ if ($success) {
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>
-    
   </div>
-  <h3><a href="register.php">REGISTER NOW</a></h3>
-  <div class="container1" style="background-color:#007fff">
-  <p2>&#169 created by tpitout | mtshisw</p2>
+
+  <div class="container" style="background-color:#007fff">
+    <button type="button" class="regbtn">REGISTER</button>
   </div>
-</form>
 </form>
 </body>
 </html>
