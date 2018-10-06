@@ -26,6 +26,15 @@ h2 {
     font-family: Helvetica;
 
 }
+
+h3 {
+    color: #007fff;
+    text-align: center;
+    cursor: help;
+    font-family: Helvetica;
+
+}
+
 button {
     background-color: #007fff;
     color: white;
@@ -91,9 +100,20 @@ label {
     margin: 0 auto;
 }
 
+.container1 {
+    padding: 20px;
+    text-align: center;
+    width: auto;
+    margin: 0 auto;
+}
+
 span.psw {
     float: right;
     padding-top: 16px;
+}
+p2 {
+    color: white;
+    
 }
 
 @media screen and (max-width: 300px) {
@@ -115,23 +135,36 @@ span.psw {
 $error_login = "ACCOUNT DOESN'T EXIST";
 $username = trim($_GET['uname']);
 $password = trim($_GET['psw']);
+$password2 = trim($_GET['psw2']);
 
-$success = false;
+
+
+
+$exist = false;
 
 $handle = fopen("data.csv", "r");
 
 while (($data = fgetcsv($handle)) !== FALSE) {
     if ($data[0] == $username && $data[1] == $password) {
-        $success = true;
+        $exist = true;
         break;
     }
+}
+fclose($handle);
+if ($exist) {
+    echo '<script language="javascript">';
+    echo 'alert("Already Exists!")';
+    echo '</script>';
+} else {
+
+        $line = array($username, $password);
+        $handle = fopen("data.csv", "a");
+        fputcsv($handle, $line, ',','\n');
+        header("location: main.php");
 }
 
 fclose($handle);
 
-if ($success) {
-    header("location: main.php");
-}
 ?>
 
 <form method="GET">
@@ -145,16 +178,16 @@ if ($success) {
 
     <label for="psw"><b>PASSWORD</b></label>
     <input type="password" placeholder="ENTER PASSWORD" name="psw" required>
-        
-    <button type="submit">LOGIN</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
+    <label for="psw"><b>RE-ENTER PASSWORD</b></label>
+    <input type="password" placeholder="ENTER PASSWORD AGAIN" name="psw2" required>
+    <button type="submit">REGISTER</button>
+    
   </div>
-
-  <div class="container" style="background-color:#007fff">
-    <button type="button" class="regbtn">REGISTER</button>
+  <h3><a href="index.php">LOG IN</a></h3>
+  <div class="container1" style="background-color:#007fff">
+  <p2>&#169 created by tpitout | mtshisw</p2>
   </div>
+</form>
 </form>
 </body>
 </html>

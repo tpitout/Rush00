@@ -30,6 +30,19 @@ li a:hover, .dropdown:hover .dropbtn {
 li.dropdown {
     display: inline-block;
 }
+.container {
+    padding: 20px;
+    text-align: center;
+    width: 500px;
+    margin: 0 auto;
+}
+
+.container1 {
+    padding: 20px;
+    text-align: center;
+    width: auto;
+    margin: 0 auto;
+}
 
 .dropdown-content {
     display: none;
@@ -57,9 +70,15 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+p2 {
+    color: white;
+    font-family: helvetica;
+}
 </style>
 </head>
 <body>
+
+<div class="container1" style="background-color:#007fff"></div>
 
 <ul>
   <li><a href="main.php"><b>HOME</b></a></li>
@@ -88,5 +107,16 @@ li.dropdown {
     </div>
   </li>
 </ul>
+<form>
+    <div>
+        <h1>APPLE</h1>
+        <h1>SAMSUNG</h1>
+        <h1>HUAWEI</h1>
+</div>
+
+</form>
+<div class="container1" style="background-color:#007fff">
+  <p2>&#169 created by tpitout | mtshisw</p2>
+  </div>
 </body>
 </html>
